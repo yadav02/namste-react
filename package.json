@@ -1,0 +1,41 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest",
+    "serve-json": "json-server --watch db.json --port 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadav02/namste-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "satyendra singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yadav02/namste-react/issues"
+  },
+  "homepage": "https://github.com/yadav02/namste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/public-sans": "^5.0.4",
+    "@mui/joy": "^5.0.0-alpha.86",
+    "json-server": "^0.17.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-spinners": "^0.13.8"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

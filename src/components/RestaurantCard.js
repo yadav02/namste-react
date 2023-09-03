@@ -14,10 +14,10 @@ export const RestaurantCard = ({
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <h4>{cuisines}</h4>
-      <h4>{avgRating}stars</h4>
-      <h4>{costForTwo}</h4>
+      <h2>{name}</h2>
+      <p>{cuisines}</p>
+      <p>{avgRating}stars</p>
+      <p>{costForTwo}</p>
     </div>
   );
 };

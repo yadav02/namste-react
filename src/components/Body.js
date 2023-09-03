@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { RestaurantCard } from "./RestaurantCard";
+import Loader from "./Loader";
 
 export const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -16,6 +18,7 @@ export const Body = () => {
     setRestaurantList(
       data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setLoading(false);
   };
 
   const handleFilterButton = () => {
@@ -28,17 +31,21 @@ export const Body = () => {
   return (
     <div className="body">
       <div className="filter">
-        <button className="filter-btn" onClick={handleFilterButton}>
+        <button className="custom-button" onClick={handleFilterButton}>
           Top Rated Restaurant
         </button>
 
-        <button className="reset-btn">Reset Restaurant List</button>
+        {/* <button className="custom-button">Reset Restaurant List</button> */}
       </div>
-      <div className="res-container">
-        {restaurantList?.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} {...restaurant.info} />
-        ))}
-      </div>
+      {loading ? (
+        <Loader/>
+      ) : (
+        <div className="res-container">
+          {restaurantList?.map((restaurant) => (
+            <RestaurantCard key={restaurant.info.id} {...restaurant.info} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
